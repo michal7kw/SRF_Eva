@@ -1,0 +1,3 @@
+Sample	FastQC	Trim Galore (Adapter Removal)
+FastQC	0.12.1	
+Trim Galore (Adapter Removal)		5.1

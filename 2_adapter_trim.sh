@@ -11,9 +11,7 @@
 #SBATCH --error="./logs/2_trim_%a.err"
 #SBATCH --output="./logs/2_trim_%a.out"
 
-# Set up conda environment with required tools
-source /opt/common/tools/ric.cosr/miniconda3/bin/activate
-conda activate trim
+conda activate  /beegfs/scratch/ric.sessa/kubacki.michal/conda/envs/trim
 
 BASE_DIR="/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva"
 FASTQ_DIR="${BASE_DIR}/90-1222471453/00_fastq"

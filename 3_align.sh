@@ -13,7 +13,7 @@
 
 # Set up conda environment with required tools
 source /opt/common/tools/ric.cosr/miniconda3/bin/activate
-conda activate alignment
+conda  /beegfs/scratch/ric.sessa/kubacki.michal/conda/envs/alignment
 
 BASE_DIR="/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva"
 TRIMMED_DIR="${BASE_DIR}/results/02_trimmed"
@@ -37,6 +37,11 @@ bowtie2 \
     --phred33 \
     -I 10 \
     -X 700 \
+    --rg-id "${SAMPLE}" \
+    --rg "SM:${SAMPLE}" \
+    --rg "LB:${SAMPLE}" \
+    --rg "PL:ILLUMINA" \
+    --rg "PU:${SAMPLE}" \
     -x ${GENOME_INDEX} \
     -1 ${TRIMMED_DIR}/${SAMPLE}_R1_001_val_1.fq.gz \
     -2 ${TRIMMED_DIR}/${SAMPLE}_R2_001_val_2.fq.gz \

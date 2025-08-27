@@ -1,0 +1,135 @@
+[2025-08-27 14:47:31,708] root                                               [DEBUG  ]  Logging to file: /beegfs/scratch/tmp/tmpgkfbrbox/multiqc.log
+[2025-08-27 14:47:31,710] multiqc.core.update_config                         [DEBUG  ]  This is MultiQC v1.30
+[2025-08-27 14:47:31,711] multiqc.core.update_config                         [DEBUG  ]  Running Python 3.13.5 | packaged by conda-forge | (main, Jun 16 2025, 08:27:50) [GCC 13.3.0]
+[2025-08-27 14:47:31,937] multiqc.config                                     [WARNING]  Config validation warning for /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/config/multiqc_config.yaml: {'s/_001//g': None, 's/_R1//g': None, 's/_R2//g': None, 's/_val_1//g': None, 's/_val_2//g': None, 's/_sorted//g': None, 's/_filtered//g': None, 's/_dedup//g': None} is not valid under any of the given schemas
+
+Failed validating 'anyOf' in schema['properties']['sample_names_rename']:
+    {'anyOf': [{'items': {'items': {'type': 'string'}, 'type': 'array'},
+                'type': 'array'},
+               {'type': 'null'}],
+     'default': None,
+     'description': 'Sample names to rename',
+     'title': 'Sample Names Rename'}
+
+On instance['sample_names_rename']:
+    {'s/_001//g': None,
+     's/_R1//g': None,
+     's/_R2//g': None,
+     's/_val_1//g': None,
+     's/_val_2//g': None,
+     's/_sorted//g': None,
+     's/_filtered//g': None,
+     's/_dedup//g': None}
+[2025-08-27 14:47:31,938] multiqc.config                                     [INFO   ]  Loading config settings from: /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/config/multiqc_config.yaml
+[2025-08-27 14:47:31,938] multiqc.config                                     [DEBUG  ]  New config: {'title': 'Cut&Tag Analysis Report: TES/TEAD1 Epigenetic Study', 'subtitle': 'Investigating transcriptional regulation by TES epigenetic silencer', 'intro_text': 'This report aggregates quality control metrics from the Cut&Tag analysis pipeline.\nThe experiment investigates TES (TEAD1-KRAB-DNMT3A/3L) binding profiles compared to \nendogenous TEAD1 and validates specificity using TESmut negative control.\n', 'report_comment': 'Samples:\n- TES (3 replicates): Epigenetic silencer targeting TEAD1 sites\n- TESmut (3 replicates): Negative control with mutated TEAD1 binding domain\n- TEAD1 (3 replicates): Endogenous TEAD1 for comparison\n- IggMs/IggRb: Control antibodies\n', 'sample_names_rename': {'s/_001//g': None, 's/_R1//g': None, 's/_R2//g': None, 's/_val_1//g': None, 's/_val_2//g': None, 's/_sorted//g': None, 's/_filtered//g': None, 's/_dedup//g': None}, 'sample_names_order': ['TES-1', 'TES-2', 'TES-3', 'TESmut-1', 'TESmut-2', 'TESmut-3', 'TEAD1-1', 'TEAD1-2', 'TEAD1-3', 'IggMs', 'IggRb'], 'module_order': [{'fastqc': {'name': 'FastQC (Raw Reads)', 'path_filters': ['*_fastqc.zip'], 'path_filters_exclude': ['*val*']}}, {'cutadapt': {'name': 'Trim Galore (Adapter Removal)'}}, {'fastqc': {'name': 'FastQC (Trimmed Reads)', 'path_filters': ['*val*_fastqc.zip']}}, {'bowtie2': {'name': 'Bowtie2 (Alignment)'}}, {'samtools': {'name': 'Samtools (Stats/Flagstat)'}}, {'picard': {'name': 'Picard (Duplicate Removal)'}}, {'macs2': {'name': 'MACS2 (Peak Calling)'}}, {'deeptools': {'name': 'deepTools (Coverage)'}}], 'fn_ignore_dirs': ['*/logs/*', '*/scripts/*', '*/config/*'], 'fn_ignore_files': ['*.md5', '*.sh', '*.R'], 'sample_colors': {'TES-1': '#2E7D32', 'TES-2': '#388E3C', 'TES-3': '#43A047', 'TESmut-1': '#D32F2F', 'TESmut-2': '#F44336', 'TESmut-3': '#EF5350', 'TEAD1-1': '#1976D2', 'TEAD1-2': '#2196F3', 'TEAD1-3': '#42A5F5', 'IggMs': '#757575', 'IggRb': '#9E9E9E'}, 'top_modules': ['fastqc', 'bowtie2', 'samtools', 'macs2'], 'picard_config': {'duplicate_metrics': ['PERCENT_DUPLICATION', 'ESTIMATED_LIBRARY_SIZE']}, 'macs2_config': {'peak_count': ['total_peaks', 'fc_over_10']}, 'samtools_config': {'flagstat': ['mapped_passed', 'properly_paired'], 'stats': ['error_rate', 'average_length', 'average_quality']}}
+[2025-08-27 14:47:31,938] multiqc.config                                     [DEBUG  ]  Added to filename clean extensions: [['.gz', '.fastq', '.fq', '.bam', '.sam', '.bed', {'type': 'regex', 'pattern': '_peaks.narrowPeak', 'replace': ''}]]
+[2025-08-27 14:47:31,939] multiqc.core.update_config                         [INFO   ]  Prepending directory to sample names
+[2025-08-27 14:47:31,940] multiqc.core.update_config                         [INFO   ]  Not cleaning sample names
+[2025-08-27 14:47:31,956] urllib3.connectionpool                             [DEBUG  ]  Starting new HTTPS connection (1): api.multiqc.info:443
+[2025-08-27 14:47:32,170] urllib3.connectionpool                             [DEBUG  ]  https://api.multiqc.info:443 "GET /version?version_multiqc=1.30&version_python=3.13.5&operating_system=Linux&is_docker=False&is_singularity=False&is_conda=True&is_ci=False&is_notebook=False&ai_summary=False&ai_summary_full=False HTTP/1.1" 200 178
+[2025-08-27 14:47:32,171] multiqc.core.version_check                         [DEBUG  ]  Latest MultiQC version is v1.30, released 2025-07-09
+[2025-08-27 14:47:32,172] multiqc.multiqc                                    [DEBUG  ]  Working dir : /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva
+[2025-08-27 14:47:32,180] multiqc.multiqc                                    [ERROR  ]  `pandoc` and `pdflatex` tools are required to create a PDF report. Please install those and try again. See http://pandoc.org/installing.html for the `pandoc` installation instructions (e.g. `brew install pandoc` on macOS), and install LaTeX for `pdflatex` (e.g. `brew install basictex`on macOS). Alternatively, omit the `--pdf` option or unset `make_pdf: true` in the MultiQC config.
+[2025-08-27 14:47:32,180] multiqc.multiqc                                    [DEBUG  ]  Template    : simple
+[2025-08-27 14:47:32,180] multiqc.multiqc                                    [DEBUG  ]  Command used: /beegfs/scratch/ric.sessa/kubacki.michal/conda/envs/multiqc/bin/multiqc /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results -c /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/config/multiqc_config.yaml -o /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results/multiqc -n TES_TEAD1_CutTag_Report --force --dirs --fullnames --export --pdf -v
+[2025-08-27 14:47:32,181] multiqc.core.file_search                           [INFO   ]  Search path: /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results
+[2025-08-27 14:47:32,181] multiqc.core.file_search                           [DEBUG  ]  Analysing modules: fastqc, bowtie2, samtools, macs2, adapterremoval, afterqc, anglerfish, ataqv, bakta, bamdst, bamtools, bases2fastq, bbduk, bbmap, bcftools, bcl2fastq, bclconvert, biobambam2, biobloomtools, biscuit, bismark, bowtie1, busco, bustools, ccs, cellranger, cellranger_arc, cells2stats, checkm, checkm2, checkqc, clipandmerge, clusterflow, conpair, custom_content, damageprofiler, dedup, diamond, disambiguate, dragen, dragen_fastqc, eigenstratdatabasetools, fastp, fastq_screen, featurecounts, fgbio, filtlong, flash, flexbar, freyja, ganon, gatk, gffcompare, glimpse, goleft_indexcov, gopeaks, gtdbtk, haplocheck, happy, hicexplorer, hicpro, hicup, hifiasm, hisat2, homer, hops, hostile, htseq, humid, interop, isoseq, ivar, jcvi, jellyfish, kaiju, kallisto, kat, kraken, leehom, librarian, lima, longranger, malt, mapdamage, megahit, metaphlan, methylqa, mgikit, minionqc, mirtop, mirtrace, mosaicatcher, mosdepth, motus, mtnucratio, multivcfanalyzer, nanoq, nanostat, nextclade, ngsbits, ngsderive, nonpareil, odgi, optitype, pairtools, pangolin, pbmarkdup, peddy, percolator, phantompeakqualtools, porechop, preseq, prinseqplusplus, prokka, purple, pychopper, pycoqc, qc3C, qorts, qualimap, quast, rna_seqc, rockhopper, rsem, rseqc, salmon, sambamba, samblaster, sargasso, seqera_cli, sequali, seqwho, seqyclean, sexdeterrmine, sickle, skewer, slamdunk, snippy, snpeff, snpsplit, somalier, sortmerna, sourmash, spaceranger, stacks, star, supernova, telseq, theta2, tophat, trimmomatic, truvari, umicollapse, umitools, varscan2, vcftools, vep, verifybamid, vg, whatshap, xengsort, xenome, cutadapt, picard, deeptools, software_versions
+[2025-08-27 14:47:32,182] multiqc.core.file_search                           [DEBUG  ]  Search keys: adapterremoval, afterqc, anglerfish, ataqv, bakta, bamdst, bamtools, bases2fastq, bbduk, bbmap, bcftools, bcl2fastq, bclconvert, biobambam2, biobloomtools, biscuit, bismark, bowtie1, bowtie2, busco, bustools, ccs, cellranger, cellranger_arc, cells2stats, checkm, checkm2, checkqc, clipandmerge, clusterflow, conpair, custom_content, cutadapt, damageprofiler, dedup, deeptools, diamond, disambiguate, dragen, dragen_fastqc, eigenstratdatabasetools, fastp, fastq_screen, fastqc, featurecounts, fgbio, filtlong, flash, flexbar, freyja, ganon, gatk, gffcompare, glimpse, goleft_indexcov, gopeaks, gtdbtk, haplocheck, happy, hicexplorer, hicpro, hicup, hifiasm, hisat2, homer, hops, hostile, htseq, humid, interop, isoseq, ivar, jcvi, jellyfish, kaiju, kallisto, kat, kraken, leehom, librarian, lima, longranger, macs2, malt, mapdamage, megahit, metaphlan, methylqa, mgikit, minionqc, mirtop, mirtrace, mosaicatcher, mosdepth, motus, mtnucratio, multiqc_data, multivcfanalyzer, nanoq, nanostat, nextclade, ngsbits, ngsderive, nonpareil, odgi, optitype, pairtools, pangolin, pbmarkdup, peddy, percolator, phantompeakqualtools, picard, porechop, preseq, prinseqplusplus, prokka, purple, pychopper, pycoqc, qc3C, qorts, qualimap, quast, rna_seqc, rockhopper, rsem, rseqc, salmon, sambamba, samblaster, samtools, sargasso, seqera_cli, sequali, seqwho, seqyclean, sexdeterrmine, sickle, skewer, slamdunk, snippy, snpeff, snpsplit, software_versions, somalier, sortmerna, sourmash, spaceranger, stacks, star, supernova, telseq, theta2, tophat, trimmomatic, truvari, umicollapse, umitools, varscan2, vcftools, vep, verifybamid, vg, whatshap, xengsort, xenome
+[2025-08-27 14:47:36,636] multiqc.report                                     [DEBUG  ]  Summary of files that were skipped by the search: |skipped_filesize_limit: 33|, |skipped_module_specific_max_filesize: 77|, |skipped_no_match: 88|
+[2025-08-27 14:47:36,640] multiqc.core.exec_modules                          [DEBUG  ]  Running module: fastqc
+[2025-08-27 14:47:37,160] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 44 reports
+[2025-08-27 14:47:37,162] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_sequence_counts_plot: found old_data = False
+[2025-08-27 14:47:37,162] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_sequence_counts_plot: no old data or empty, using new data only
+[2025-08-27 14:47:38,794] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_base_sequence_quality_plot: found old_data = False
+[2025-08-27 14:47:38,795] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_base_sequence_quality_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,140] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_sequence_quality_scores_plot: found old_data = False
+[2025-08-27 14:47:39,140] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_sequence_quality_scores_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,199] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_sequence_gc_content_plot: found old_data = False
+[2025-08-27 14:47:39,199] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_sequence_gc_content_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,252] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_base_n_content_plot: found old_data = False
+[2025-08-27 14:47:39,252] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_per_base_n_content_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,287] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_sequence_length_distribution_plot: found old_data = False
+[2025-08-27 14:47:39,287] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_sequence_length_distribution_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,318] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_sequence_duplication_levels_plot: found old_data = False
+[2025-08-27 14:47:39,319] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_sequence_duplication_levels_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,348] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_top_overrepresented_sequences_table: found old_data = False
+[2025-08-27 14:47:39,348] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_top_overrepresented_sequences_table: no old data or empty, using new data only
+[2025-08-27 14:47:39,473] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_adapter_content_plot: found old_data = False
+[2025-08-27 14:47:39,473] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc_adapter_content_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,519] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc-status-check-heatmap: found old_data = False
+[2025-08-27 14:47:39,519] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for fastqc-status-check-heatmap: no old data or empty, using new data only
+[2025-08-27 14:47:39,574] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_fastqc.txt
+[2025-08-27 14:47:39,578] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_fastqc.json
+[2025-08-27 14:47:39,580] multiqc.base_module                                [DEBUG  ]  fastqc: deleting attribute self.order_of_duplication_levels
+[2025-08-27 14:47:39,581] multiqc.base_module                                [DEBUG  ]  fastqc: deleting attribute self.status_colours
+[2025-08-27 14:47:39,581] multiqc.core.exec_modules                          [DEBUG  ]  Running module: bowtie2
+[2025-08-27 14:47:39,635] multiqc.modules.bowtie2.bowtie2                    [INFO   ]  Found 11 reports
+[2025-08-27 14:47:39,638] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_bowtie2.txt
+[2025-08-27 14:47:39,640] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_bowtie2.json
+[2025-08-27 14:47:39,641] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for bowtie2_pe_plot: found old_data = False
+[2025-08-27 14:47:39,642] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for bowtie2_pe_plot: no old data or empty, using new data only
+[2025-08-27 14:47:39,674] multiqc.base_module                                [DEBUG  ]  bowtie2: deleting attribute self.bowtie2_data
+[2025-08-27 14:47:39,675] multiqc.base_module                                [DEBUG  ]  bowtie2: deleting attribute self.num_se
+[2025-08-27 14:47:39,675] multiqc.base_module                                [DEBUG  ]  bowtie2: deleting attribute self.num_pe
+[2025-08-27 14:47:39,675] multiqc.core.exec_modules                          [DEBUG  ]  Running module: samtools
+[2025-08-27 14:47:39,800] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for samtools-flagstat-table: found old_data = False
+[2025-08-27 14:47:39,800] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for samtools-flagstat-table: no old data or empty, using new data only
+[2025-08-27 14:47:39,861] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for samtools-flagstat-pct-table: found old_data = False
+[2025-08-27 14:47:39,862] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for samtools-flagstat-pct-table: no old data or empty, using new data only
+[2025-08-27 14:47:39,923] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_samtools_flagstat.txt
+[2025-08-27 14:47:39,926] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_samtools_flagstat.json
+[2025-08-27 14:47:39,926] multiqc.modules.samtools.samtools                  [INFO   ]  Found 11 flagstat reports
+[2025-08-27 14:47:39,927] multiqc.base_module                                [DEBUG  ]  samtools: deleting attribute self.samtools_idxstats
+[2025-08-27 14:47:39,927] multiqc.core.exec_modules                          [DEBUG  ]  Running module: custom_content
+[2025-08-27 14:47:39,940] multiqc.core.exec_modules                          [DEBUG  ]  No samples found: custom_content
+[2025-08-27 14:47:39,941] multiqc.core.exec_modules                          [DEBUG  ]  Running module: cutadapt
+[2025-08-27 14:47:40,024] multiqc.modules.cutadapt.cutadapt                  [INFO   ]  Found 22 reports
+[2025-08-27 14:47:40,027] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_cutadapt.txt
+[2025-08-27 14:47:40,030] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_cutadapt.json
+[2025-08-27 14:47:40,031] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for cutadapt_filtered_reads_plot: found old_data = False
+[2025-08-27 14:47:40,032] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for cutadapt_filtered_reads_plot: no old data or empty, using new data only
+[2025-08-27 14:47:40,074] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for cutadapt_trimmed_sequences_plot_3: found old_data = False
+[2025-08-27 14:47:40,074] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for cutadapt_trimmed_sequences_plot_3: no old data or empty, using new data only
+[2025-08-27 14:47:40,119] multiqc.base_module                                [DEBUG  ]  cutadapt: deleting attribute self.cutadapt_data
+[2025-08-27 14:47:40,120] multiqc.base_module                                [DEBUG  ]  cutadapt: deleting attribute self.cutadapt_length_counts
+[2025-08-27 14:47:40,120] multiqc.base_module                                [DEBUG  ]  cutadapt: deleting attribute self.cutadapt_length_exp
+[2025-08-27 14:47:40,121] multiqc.base_module                                [DEBUG  ]  cutadapt: deleting attribute self.cutadapt_length_obsexp
+[2025-08-27 14:47:40,121] multiqc.core.software_versions                     [DEBUG  ]  Reading software versions from config.software_versions
+[2025-08-27 14:47:40,137] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_software_versions.txt
+[2025-08-27 14:47:40,137] multiqc.core.write_results                         [INFO   ]  Rendering plots. Export plots to formats png, svg, pdf is requested, so it might take a while. To disable plot export, set `export_plots: false` in config, or remove the `--export-plots` command line flag
+[2025-08-27 14:48:03,140] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for general_stats_table: found old_data = False
+[2025-08-27 14:48:03,141] multiqc.plots.plot                                 [DEBUG  ]  merge_with_previous for general_stats_table: no old data or empty, using new data only
+[2025-08-27 14:48:03,242] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_general_stats.txt
+[2025-08-27 14:48:03,246] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_general_stats.json
+[2025-08-27 14:48:04,102] multiqc.core.ai                                    [DEBUG  ]  Saved AI prompt to multiqc_data/llms-full.txt
+[2025-08-27 14:48:04,148] multiqc.core.write_results                         [DEBUG  ]  Exporting plot data to files
+[2025-08-27 14:48:04,151] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_sequence_counts_plot.txt
+[2025-08-27 14:48:04,157] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_per_base_sequence_quality_plot.txt
+[2025-08-27 14:48:04,161] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_per_sequence_quality_scores_plot.txt
+[2025-08-27 14:48:04,171] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_per_sequence_gc_content_plot_Percentages.txt
+[2025-08-27 14:48:04,179] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_per_sequence_gc_content_plot_Counts.txt
+[2025-08-27 14:48:04,184] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_per_base_n_content_plot.txt
+[2025-08-27 14:48:04,188] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_sequence_length_distribution_plot.txt
+[2025-08-27 14:48:04,191] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_sequence_duplication_levels_plot.txt
+[2025-08-27 14:48:04,194] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_top_overrepresented_sequences_table.txt
+[2025-08-27 14:48:04,204] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc_adapter_content_plot.txt
+[2025-08-27 14:48:04,207] multiqc.report                                     [DEBUG  ]  Wrote data file fastqc-status-check-heatmap.txt
+[2025-08-27 14:48:04,210] multiqc.report                                     [DEBUG  ]  Wrote data file bowtie2_pe_plot.txt
+[2025-08-27 14:48:04,212] multiqc.report                                     [DEBUG  ]  Wrote data file samtools-flagstat-table.txt
+[2025-08-27 14:48:04,215] multiqc.report                                     [DEBUG  ]  Wrote data file samtools-flagstat-pct-table.txt
+[2025-08-27 14:48:04,218] multiqc.report                                     [DEBUG  ]  Wrote data file cutadapt_filtered_reads_plot.txt
+[2025-08-27 14:48:04,223] multiqc.report                                     [DEBUG  ]  Wrote data file cutadapt_trimmed_sequences_plot_3_Counts.txt
+[2025-08-27 14:48:04,230] multiqc.report                                     [DEBUG  ]  Wrote data file cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt
+[2025-08-27 14:48:04,231] multiqc.core.write_results                         [DEBUG  ]  Moving data file from '/beegfs/scratch/tmp/tmpgkfbrbox/multiqc_data' to '/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results/multiqc/TES_TEAD1_CutTag_Report_data'
+[2025-08-27 14:48:04,234] multiqc.core.plot_data_store                       [ERROR  ]  Error validating config: 1 validation error for MultiQCConfig
+sample_names_rename
+  Input should be a valid list [type=list_type, input_value={'s/_001//g': None, 's/_R...ne, 's/_dedup//g': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/list_type
+[2025-08-27 14:48:04,678] multiqc.core.write_results                         [INFO   ]  Data        : results/multiqc/TES_TEAD1_CutTag_Report_data
+[2025-08-27 14:48:05,894] multiqc.core.write_results                         [DEBUG  ]  Compressing plot data
+[2025-08-27 14:48:05,955] multiqc.core.write_results                         [DEBUG  ]  Attempting Pandoc conversion to PDF with following command:
+pandoc --standalone /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results/multiqc/TES_TEAD1_CutTag_Report.html --output /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results/multiqc/TES_TEAD1_CutTag_Report.pdf --pdf-engine=pdflatex -V documentclass=article -V geometry=margin=1in -V title=
+[2025-08-27 14:48:05,958] multiqc.core.write_results                         [ERROR  ]  Error creating PDF - `pandoc` not found. Is it installed? http://pandoc.org/
+[2025-08-27 14:48:05,959] multiqc.core.write_results                         [DEBUG  ]  Moving plots directory from '/beegfs/scratch/tmp/tmpgkfbrbox/multiqc_plots' to '/beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results/multiqc/TES_TEAD1_CutTag_Report_plots'
+[2025-08-27 14:48:06,105] multiqc.core.write_results                         [INFO   ]  Plots       : results/multiqc/TES_TEAD1_CutTag_Report_plots
+[2025-08-27 14:48:06,106] multiqc.core.write_results                         [DEBUG  ]  Report HTML written to /beegfs/scratch/ric.sessa/kubacki.michal/SRF_Eva/results/multiqc/TES_TEAD1_CutTag_Report.html
